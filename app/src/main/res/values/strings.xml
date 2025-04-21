@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Game Recorder</string>
+    <string name="disconnect_notice">Raspberry pi disconnected. Please reconnect and try again.</string>
+</resources>
