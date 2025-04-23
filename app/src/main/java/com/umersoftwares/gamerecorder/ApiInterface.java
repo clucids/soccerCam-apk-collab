@@ -1,13 +1,11 @@
 package com.umersoftwares.gamerecorder;
 
-import java.util.List;
-
 import retrofit2.Call;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import okhttp3.ResponseBody;
 import retrofit2.http.POST;
-import retrofit2.http.Query;
+import retrofit2.http.Path;
 
 
 public interface ApiInterface {
@@ -25,5 +23,19 @@ public interface ApiInterface {
 
     @GET("/state")
     Call<DeviceState> state();
+
+    @GET("/recordings/{filename}")
+    Call<ResponseBody> downloadRecording(@Path("filename") String filename);
+
+    @GET("/recordings")
+    Call<FileListResponse> getRecordingsList();
+
+    @DELETE("/delete/{filename}")
+    Call<FileResponse> deleteRecording(@Path("filename") String filename);
+
+    @POST("/transfer/{filename}")
+    Call<FileResponse> transferRecording(@Path("filename") String filename);
+
+
 
 }

@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
+
         webViewOneInit();
         webViewTwoInit();
 
@@ -231,6 +233,11 @@ public class MainActivity extends AppCompatActivity {
                 disconnectHandler();
             }
         });
+    }
+
+    public void recordingsClicked(View view){
+        Intent intent = new Intent(MainActivity.this, FilesActivity.class);
+        startActivity(intent);
     }
 
     @Override
